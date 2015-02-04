@@ -32,6 +32,14 @@ This means you place the raw ROP.dat on the sdcard. It is tested to work with
 Taken from [WinterMute](https://github.com/WinterMute/ROPInstaller) ROP scripts 
 for mset on 4.x and 6.x. Dumps memory to sdcard with 9.x spider. Currently only 9.x is supported because IFile_Write gadget is not defined for another versions.
 
+### RegionThree
+
+Taken from [smealum] (https://github.com/smealum/regionthree) and [yifanlu](https://github.com/yifanlu/Spider3DSTools/wiki/RegionThree-Loading) ROP scripts
+
+### VCInject
+
+Special version of LoadCode to run with GB/GBC Virtual Console rom injection by [KazoWAR](http://gbatemp.net/threads/injecting-roms-into-vc-with-only-the-web-browser-sure.379760/). URL parameter is passed to the code.bin as rom filename. For now only 9.x code.bin is available.
+
 ### Code (UVLoader Lite)
 
 A stripped down version of [UVLoader](http://github.com/yifanlu/UVLoader) that 
@@ -44,6 +52,10 @@ a starting point for your code.
 Compile with "gcc -o browserify browserify.c" on your computer. Then convert 
 any spider ROP payload to JS string with "browserify LoadCode.dat" (as an 
 example).
+
+## ROP exploit index.html
+
+Modified version which eliminates the need of frame.html, any server-side and to run Browserify each time you compiled the code. Also loads ROP payload directly from the WEB-server as a .dat file specified as a first HTTP GET parameter. The second HTTP GET parameter will substitute first filename inside the ROP code. e.x. http://hostname/index.html?LoadCode.dat&newcode.bin or http://hostname/index.html?VCInject.dat&gbc/newrom.gbc
 
 ## On spider ROP payloads
 
