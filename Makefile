@@ -7,7 +7,7 @@ OBJCOPY=arm-none-eabi-objcopy
 OBJCOPYFLAGS=
 DATSIZE=0x300
 
-all: code.bin LoadROP.dat LoadCode.dat MemoryDump.dat RegionThree.dat
+all: code.bin LoadROP.dat LoadCode.dat MemoryDump.dat RegionThree.dat VCInject.dat
 
 %.o: %.c
 	$(CC) -c -o $@ $< $(CFLAGS)
