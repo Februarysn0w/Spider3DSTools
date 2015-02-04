@@ -10,7 +10,7 @@ loader.
 ## How do I compile?
 
 You need an arm-none-eabi-gcc toolchain installed. Then just run "make".
-The toolchain that is tested with is <http://www.yagarto.de/>.
+The toolchain that is tested with is <http://www.yagarto.de/>. To build ROP for version 4.x or 5.x run "make ASFLAGS=-Dfw=4" or "make ASFLAGS=-Dfw=5" respectively.
 
 ## Scripts
 
@@ -30,7 +30,7 @@ This means you place the raw ROP.dat on the sdcard. It is tested to work with
 ### MemoryDump
 
 Taken from [WinterMute](https://github.com/WinterMute/ROPInstaller) ROP scripts 
-for mset on 4.x and 6.x. Dumps memory to sdcard with 9.x spider.
+for mset on 4.x and 6.x. Dumps memory to sdcard with 9.x spider. Currently only 9.x is supported because IFile_Write gadget is not defined for another versions.
 
 ### Code (UVLoader Lite)
 
