@@ -5,7 +5,6 @@
 
 #define BUFFER_LOC 0x18410000
 #define CODE_SIZE 0x00004000
-#define CODE_TARGET 0x19592000
 #define CODE_JUMP 0x009D2000
 
 	.global	_start
